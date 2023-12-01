@@ -13,7 +13,9 @@ const { PORT = 3000, URL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:5173, https://xc1st.nomoredomainsmonster.ru'],
+}));
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
