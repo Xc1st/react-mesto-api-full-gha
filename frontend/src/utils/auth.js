@@ -1,4 +1,4 @@
-const baseUrl = 'http://api.xc1st.nomoredomainsmonster.ru'
+const baseUrl = 'http://localhost:3000'
 
 function getRes(res) {
     return res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`);
