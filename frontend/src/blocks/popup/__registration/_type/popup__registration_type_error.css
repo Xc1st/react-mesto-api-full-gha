@@ -1,0 +1,13 @@
+.popup__registration_type_error{
+    width: 120px;
+    height: 120px;
+    margin-bottom: 32px;
+    background-image: url(../../../../images/error12.svg);
+    background-position: center;
+    background-size: cover;
+}
+@media screen and (max-width: 700px) {
+    .popup__registration_type_error {
+        margin-bottom: 0;
+    }
+}

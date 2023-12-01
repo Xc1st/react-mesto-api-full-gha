@@ -1,0 +1,7 @@
+.popup__save_loading{
+    background-image: url(../../../../images/loading_mini.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    align-self: center;
+}

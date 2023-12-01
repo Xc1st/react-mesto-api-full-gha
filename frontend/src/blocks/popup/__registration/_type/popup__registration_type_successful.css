@@ -1,0 +1,14 @@
+.popup__registration_type_successful {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 32px;
+    background-image: url(../../../../images/Union.svg);
+    background-position: center;
+    background-size: cover;
+}
+
+@media screen and (max-width: 700px) {
+    .popup__registration_type_successful {
+    margin: 0;
+    }
+}

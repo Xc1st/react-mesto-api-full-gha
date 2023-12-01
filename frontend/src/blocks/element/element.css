@@ -1,0 +1,11 @@
+.element {
+    display: grid;
+    width: 282px;
+    background-color: #FFFFFF;
+    grid-template-areas: "photo photo butdelete"
+        "footer footer footer";
+    /* почитать */
+    grid-template-rows: min-content 1fr;
+    grid-template-columns: 1fr min-content;
+    border-radius: 10px;
+}

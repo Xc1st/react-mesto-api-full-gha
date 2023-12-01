@@ -1,0 +1,11 @@
+@media screen and (max-width:700px) {
+    .header__container_type_mobile {
+        display: flex;
+        gap: 18px;
+        justify-content: center;
+        flex-direction: column;
+        padding-bottom: 40px;
+        border-bottom: 1px solid #545454;
+        padding: 40px 0 0 0;
+    }
+}

@@ -1,0 +1,21 @@
+.header__burger-button{
+    display: none;
+    border: none;
+    background-image: url(../../../images/Group5.svg);
+    background-color: transparent;
+    width: 24px;
+    height: 24px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.header__burger-button:hover{
+    opacity: .8;
+}
+@media screen and (max-width: 700px){
+    .header__burger-button{
+        display: block;
+        margin: 0 30px 0 0;
+    }
+}
