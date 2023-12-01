@@ -102,7 +102,7 @@ function App() {
           setCards(dataCards)
           setIsLoading(false)
         })
-        // .catch((err) => console.error(`Ошибка при создании начальных элементов страницы ${err}`))
+        .catch((err) => console.error(`Ошибка при создании начальных элементов страницы ${err}`))
     }
 
   }, [loggedIn])
