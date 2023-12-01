@@ -96,6 +96,6 @@ class Api {
     }
 }
 const api = new Api({
-    baseUrl: 'http://api.xc1st.nomoredomainsmonster.ru'
+    baseUrl: 'api.xc1st.nomoredomainsmonster.ru'
 });
 export default api

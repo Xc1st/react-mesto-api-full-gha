@@ -95,6 +95,7 @@ function App() {
 
   useEffect(() => {
     if (loggedIn) {
+      setIsLoading(true)
       Promise.all([api.getInfo(localStorage.jwt), api.getCards(localStorage.jwt)])
         .then(([userEmail, dataCards]) => {
           setCurrentUser(userEmail)
