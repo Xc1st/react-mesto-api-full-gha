@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 62.84.121.176
 
-Frontend https://...
+Frontend https://xc1st.nomoredomainsmonster.ru
 
-Backend https://...
+Backend https://api.xc1st.nomoredomainsmonster.ru
