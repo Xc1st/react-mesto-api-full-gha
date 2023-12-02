@@ -32,7 +32,7 @@ function App() {
 
   //стейты для регистрации и логина
   const [isSuccessful, setIsSuccessful] = useState(false)
-  const [loggedIn, setLoggedIn] = useState(true)
+  const [loggedIn, setLoggedIn] = useState(false)
   // стейт контекста
   const [currentUser, setCurrentUser] = useState({})
   const [userEmail, setUserEmail] = useState('')
@@ -97,12 +97,15 @@ function App() {
     if (loggedIn) {
       setIsLoading(true)
       Promise.all([api.getInfo(localStorage.jwt), api.getCards(localStorage.jwt)])
-        .then(([userEmail, dataCards]) => {
-          setCurrentUser(userEmail)
+        .then(([userData, dataCards]) => {
+          setCurrentUser(userData)
+          setUserEmail(userData.email)
           setCards(dataCards)
-          setIsLoading(false)
         })
         .catch((err) => console.error(`Ошибка при создании начальных элементов страницы ${err}`))
+        .finally(() => {
+          setIsLoading(false)
+        })
     }
 
   }, [loggedIn])
@@ -110,15 +113,15 @@ function App() {
   useEffect(() => {
     if (localStorage.jwt) {
       getUser(localStorage.jwt)
-        .then(res => {
-          setUserEmail(res.data.email)
+        .then(() => {
           setLoggedIn(true)
+          navigate("/")
         })
         .catch((err) => console.error(`Ошибка авторизации при повторном входе ${err}`))
     } else {
       setLoggedIn(false)
     }
-  }, [loggedIn])
+  }, [])
 
   function handleDeleteCard(evt) {
     evt.preventDefault()
@@ -151,7 +154,7 @@ function App() {
     api.setAvatar(data, localStorage.jwt)
       .then(res => {
         setCurrentUser(res)
-        closeAllPopups() 
+        closeAllPopups()
         reset()
         setIsSent(false)
       })
@@ -160,7 +163,7 @@ function App() {
 
   function handleAddPlaceSubmit(data, reset) {
     setIsSent(true)
-    api.addNewCard(data,localStorage.jwt)
+    api.addNewCard(data, localStorage.jwt)
       .then(res => {
         setCards([res, ...cards])
         closeAllPopups()
